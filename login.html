@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdePad - Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-body">
+  <header class="auth-header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">ProdePad</a>
+      <div class="navbar__actions">
+        <a class="navbar__link" href="index.html#beneficios">Beneficios</a>
+        <a class="navbar__link" href="index.html#planes">Planes</a>
+        <a class="cta" href="index.html#registro">Crear cuenta</a>
+      </div>
+    </nav>
+  </header>
+  <main class="auth" aria-labelledby="login-title">
+    <section class="auth__card">
+      <h1 id="login-title">Ingresá a tus pronósticos</h1>
+      <p class="auth__subtitle">Una vez habilitado por el equipo vas a poder apostar en segundos.</p>
+      <form id="login-form" class="auth__form" novalidate>
+        <div class="form-field">
+          <label for="username">Usuario</label>
+          <input id="username" name="username" type="text" autocomplete="username" required placeholder="tu.usuario" />
+        </div>
+        <div class="form-field">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Ingresar</button>
+      </form>
+      <p class="auth__hint">¿Todavía no tenés usuario? <a href="index.html#registro">Pedilo desde la landing</a> y lo activamos manualmente.</p>
+      <div class="auth__message" role="alert" aria-live="polite" data-auth-message></div>
+    </section>
+    <aside class="auth__aside">
+      <h2>¿Cómo funciona el acceso?</h2>
+      <ul>
+        <li>Solicitás tu usuario desde la landing.</li>
+        <li>Lo cargamos en la base de datos con tu rol y permisos.</li>
+        <li>Si estás activo y habilitado para apostar, te llevamos directo a la zona de apuestas.</li>
+      </ul>
+      <p class="auth__aside-footnote">Si tenés algún inconveniente con tu acceso escribinos a <a href="mailto:hola@prodepad.com">hola@prodepad.com</a>.</p>
+    </aside>
+  </main>
+  <footer class="footer footer--compact" id="contacto">
+    <div class="footer__content">
+      <div>
+        <h3>ProdePad</h3>
+        <p>El prode de pádel pensado para clubes, torneos y fanáticos que viven cada punto.</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html#beneficios">Beneficios</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#planes">Planes</a>
+        <a href="index.html#registro">Solicitar acceso</a>
+      </div>
+    </div>
+    <p class="footer__legal">© <span data-current-year></span> ProdePad. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    const yearElement = document.querySelector('[data-current-year]');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+  <script src="login.js"></script>
+</body>
+</html>
