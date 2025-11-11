@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProdePad - Tu pronóstico de pádel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a class="logo" href="#home">ProdePad</a>
+      <div class="navbar__actions">
+        <a class="navbar__link" href="login.html">Iniciar sesión</a>
+        <a class="cta" href="#registro">Crear cuenta</a>
+      </div>
+    </nav>
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1>El pronóstico de pádel que se juega en serio</h1>
+        <p>Elegí la liga, apostá a tu fecha favorita y armá tu prode de pádel con amigos o toda la comunidad. Sumá puntos con cada acierto y reclamá premios reales.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#registro">Probar gratis</a>
+          <a class="btn btn--ghost" href="#como-funciona">Cómo funciona</a>
+          <a class="btn btn--secondary" href="login.html">Entrar a mi cuenta</a>
+        </div>
+        <ul class="hero__stats">
+          <li><span>+5K</span> jugadores activos</li>
+          <li><span>$250K</span> pagados en premios</li>
+          <li><span>24/7</span> ligas y torneos en vivo</li>
+        </ul>
+      </div>
+      <div class="hero__card">
+        <div class="card__header">
+          <p class="card__title">Tu pronóstico express</p>
+          <span class="card__badge">Liga World Padel Tour</span>
+        </div>
+        <div class="card__matches">
+          <div class="match">
+            <p class="match__teams">Sánchez / Tapia</p>
+            <div class="match__actions">
+              <button>Ganan</button>
+              <button>Pierden</button>
+            </div>
+          </div>
+          <div class="match">
+            <p class="match__teams">Brea / González</p>
+            <div class="match__actions">
+              <button>Ganan</button>
+              <button>Pierden</button>
+            </div>
+          </div>
+          <div class="match">
+            <p class="match__teams">Stupaczuk / Di Nenno</p>
+            <div class="match__actions">
+              <button>Ganan</button>
+              <button>Pierden</button>
+            </div>
+          </div>
+        </div>
+        <p class="card__footer">Confirmá tu jugada y sumá puntos extra si acertás el resultado exacto.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--highlight" id="beneficios">
+      <div class="section__content">
+        <h2>¿Por qué jugar ProdePad?</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon">🎯</div>
+            <h3>Pronósticos precisos</h3>
+            <p>Seleccioná ligas, torneos y fechas locales de pádel para armar tu combinación ideal. Ajustá resultados, diferencia de sets y tie-breaks.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🤝</div>
+            <h3>Ligas con amigos</h3>
+            <p>Crea ligas privadas para tu club o grupo. Compartí el enlace, invita jugadores y subí la apuesta para que la competencia sea más picante.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon">🏆</div>
+            <h3>Premios reales</h3>
+            <p>Sumá puntos con cada acierto y canjealos por premios, membresías premium o depósitos directo a tu billetera virtual.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="section__content">
+        <h2>Así de fácil es jugar</h2>
+        <ol class="steps">
+          <li>
+            <h3>Elegí la liga</h3>
+            <p>World Padel Tour, Premier Padel, ligas locales y torneos amateurs. Filtrá por sede, fecha o categoría.</p>
+          </li>
+          <li>
+            <h3>Armá tu prode</h3>
+            <p>Seleccioná resultados, diferenciales de sets y apuestas especiales (primer game, tie-break, etc.).</p>
+          </li>
+          <li>
+            <h3>Compartí y apostá</h3>
+            <p>Invitá amigos, definí el pozo y seguí los partidos en vivo. Sumás puntos por aciertos y multiplicadores por combos perfectos.</p>
+          </li>
+          <li>
+            <h3>Ganás premios</h3>
+            <p>El top del ranking se lleva premios y efectivo. Podés retirar o reinvertir para la próxima fecha.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="planes">
+      <div class="section__content">
+        <h2>Planes para todos los estilos</h2>
+        <div class="pricing">
+          <article class="plan">
+            <h3>Free Match</h3>
+            <p class="plan__price">$0</p>
+            <ul>
+              <li>Pronósticos ilimitados en ligas públicas</li>
+              <li>Pozo común estándar</li>
+              <li>Acceso a rankings semanales</li>
+            </ul>
+            <a class="btn btn--outline" href="#registro">Arrancar</a>
+          </article>
+          <article class="plan plan--featured">
+            <div class="plan__tag">Más popular</div>
+            <h3>Club Premium</h3>
+            <p class="plan__price">$2.499/mes</p>
+            <ul>
+              <li>Ligas privadas ilimitadas</li>
+              <li>Gestión de premios automáticos</li>
+              <li>Estadísticas avanzadas y datos en vivo</li>
+            </ul>
+            <a class="btn btn--primary" href="#registro">Probar 7 días</a>
+          </article>
+          <article class="plan">
+            <h3>Pro Manager</h3>
+            <p class="plan__price">$7.999/mes</p>
+            <ul>
+              <li>Integración con clubes y sistemas POS</li>
+              <li>Reportes personalizados y soporte dedicado</li>
+              <li>Monitoreo en vivo multi-sede</li>
+            </ul>
+            <a class="btn btn--outline" href="#contacto">Agendar demo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios">
+      <div class="section__content">
+        <h2>La comunidad ya lo está jugando</h2>
+        <div class="testimonials">
+          <blockquote class="testimonial">
+            <p>“En el club armamos ligas semanales y el prode se volvió parte de la previa de cada partido. ¡Es tremendo!”</p>
+            <cite>María, capitana de Club Oeste</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“Lo usamos para torneos locales. Los apostadores enganchan más con los partidos y el pozo crece solo.”</p>
+            <cite>Julián, organizador Premier Padel Rosario</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“La app te avisa todo: resultados, ranking, premios. Acierto una fecha y me pago la inscripción del próximo torneo.”</p>
+            <cite>Flor, jugadora amateur</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--highlight" id="registro">
+      <div class="section__content section__content--split">
+        <div>
+          <h2>¿Listo para romperla con tu prode?</h2>
+          <p>Crea tu cuenta, arma tu primer pronóstico gratis y recibí un bono para sumarlo al pozo de tu próxima liga.</p>
+        </div>
+        <form class="signup-form">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+          <label for="club">Club o ciudad</label>
+          <input type="text" id="club" name="club" placeholder="Club Palermo" required>
+          <button type="submit" class="btn btn--primary">Crear mi cuenta</button>
+          <p class="form__note">Sin tarjeta. Cancelás cuando quieras.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="footer__content">
+      <div>
+        <h3>ProdePad</h3>
+        <p>El prode de pádel pensado para clubes, torneos y fanáticos que viven cada punto.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#planes">Planes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="mailto:hola@prodepad.app">Contacto</a>
+      </div>
+      <p class="footer__legal">© <span id="year"></span> ProdePad. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
