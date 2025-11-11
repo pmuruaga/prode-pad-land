@@ -2,7 +2,15 @@ const loginForm = document.querySelector('#login-form');
 const messageBox = document.querySelector('[data-auth-message]');
 const submitButton = loginForm?.querySelector('button[type="submit"]');
 
-const API_BASE_URL = window.PRODEPAD_API_BASE_URL || '/api';
+const defaultBaseUrl = (() => {
+  const { origin } = window.location;
+  if (origin && origin !== 'null') {
+    return `${origin.replace(/\/$/, '')}/api`;
+  }
+  return 'http://localhost:3000/api';
+})();
+
+const API_BASE_URL = window.PRODEPAD_API_BASE_URL || defaultBaseUrl;
 
 function setMessage(type, text) {
   if (!messageBox) return;
@@ -37,6 +45,7 @@ async function handleLogin(event) {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify({ username, password }),
     });
 
@@ -52,23 +61,34 @@ async function handleLogin(event) {
       throw new Error('Respuesta inesperada del servidor. Intentá nuevamente.');
     }
 
-    const { success, isActive, canBet, message } = result;
+    const { success, isActive, canBet, message, role, token } = result;
 
     if (!success) {
       throw new Error(message || 'Usuario o contraseña incorrectos.');
     }
 
     if (!isActive) {
-      setMessage('error', 'Tu usuario todavía no está activo. Contactanos para habilitarlo.');
+      setMessage('error', message || 'Tu usuario todavía no está activo. Contactanos para habilitarlo.');
       return;
     }
 
     if (!canBet) {
-      setMessage('error', 'Tu cuenta está activa pero aún no habilitada para apostar.');
+      setMessage('error', message || 'Tu cuenta está activa pero aún no habilitada para apostar.');
       return;
     }
 
-    setMessage('success', 'Ingreso correcto, redirigiendo a tus apuestas...');
+    if (token) {
+      try {
+        window.sessionStorage.setItem(
+          'prodepad.session',
+          JSON.stringify({ username, role: role || null, token })
+        );
+      } catch (storageError) {
+        console.warn('No se pudo persistir la sesión local:', storageError);
+      }
+    }
+
+    setMessage('success', message || 'Ingreso correcto, redirigiendo a tus apuestas...');
     window.location.href = 'apuestas.html';
   } catch (error) {
     setMessage('error', error.message || 'Ocurrió un error inesperado. Intentá de nuevo.');

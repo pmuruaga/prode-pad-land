@@ -11,12 +11,19 @@
 </head>
 <body class="auth-body">
   <header class="auth-header">
-    <a class="logo" href="index.html">ProdePad</a>
+    <nav class="navbar">
+      <a class="logo" href="index.html">ProdePad</a>
+      <div class="navbar__actions">
+        <a class="navbar__link" href="index.html#beneficios">Beneficios</a>
+        <a class="navbar__link" href="index.html#planes">Planes</a>
+        <a class="cta" href="index.html#registro">Crear cuenta</a>
+      </div>
+    </nav>
   </header>
-  <main class="auth">
-    <section class="auth__card" aria-labelledby="login-title">
+  <main class="auth" aria-labelledby="login-title">
+    <section class="auth__card">
       <h1 id="login-title">Ingresá a tus pronósticos</h1>
-      <p class="auth__subtitle">Una vez habilitado por el equipo, vas a poder apostar en segundos.</p>
+      <p class="auth__subtitle">Una vez habilitado por el equipo vas a poder apostar en segundos.</p>
       <form id="login-form" class="auth__form" novalidate>
         <div class="form-field">
           <label for="username">Usuario</label>
@@ -41,6 +48,27 @@
       <p class="auth__aside-footnote">Si tenés algún inconveniente con tu acceso escribinos a <a href="mailto:hola@prodepad.com">hola@prodepad.com</a>.</p>
     </aside>
   </main>
+  <footer class="footer footer--compact" id="contacto">
+    <div class="footer__content">
+      <div>
+        <h3>ProdePad</h3>
+        <p>El prode de pádel pensado para clubes, torneos y fanáticos que viven cada punto.</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html#beneficios">Beneficios</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#planes">Planes</a>
+        <a href="index.html#registro">Solicitar acceso</a>
+      </div>
+    </div>
+    <p class="footer__legal">© <span data-current-year></span> ProdePad. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    const yearElement = document.querySelector('[data-current-year]');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
   <script src="login.js"></script>
 </body>
 </html>
